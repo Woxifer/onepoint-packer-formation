@@ -29,7 +29,7 @@ variable "instance_type" {
 
 variable "ami_name" {
   type    = string
-  default = "pierre-ami"
+  default = "pierre-ami-cicd"
 }
 
 source "amazon-ebs" "app" {

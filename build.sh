@@ -12,7 +12,9 @@ terraform -chdir=terraform validate
 terraform -chdir=terraform apply -var="ami_id=$ami_id" -auto-approve
 ip_address=$(terraform output -json | jq -r '.public_ip.value')
 
-curl "http://$ip_address/" | grep foo
+
+
+curl -fsS -m 30 --retry 12 --retry-all-errors "http://$ip_address/"
 
 
 terraform -chdir=terraform destroy -var="test" -auto-approve

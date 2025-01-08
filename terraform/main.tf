@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "allow_http" {
-  name        = "pierre_allow_http"
+  name        = "pierre_cicd_allow_http"
   description = "Allow HTTP inbound traffic"
 
   ingress {
